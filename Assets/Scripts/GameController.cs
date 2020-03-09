@@ -33,6 +33,15 @@ public class GameController : MonoBehaviour
 
         set
         {
+            if (value == GameState.Pause)
+            {
+                Time.timeScale = 0.0f;
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+            }
+
             state = value;
         }
     }

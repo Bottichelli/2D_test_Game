@@ -15,11 +15,15 @@ public class Stair : MonoBehaviour
     void OnTriggerStay2D(Collider2D collider)
     {
 
-        if (_player != null)
+        if (collider.gameObject.layer == 11)
         {
-            _player.OnStair = true;       
+            _player.OnStair = true;
         }
-        
+
+        else
+        {
+            _player.OnStair = false;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
@@ -34,7 +38,7 @@ public class Stair : MonoBehaviour
      
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         StairsCollider();   
     }

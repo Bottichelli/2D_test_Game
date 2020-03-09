@@ -74,14 +74,7 @@ public class Movement : Creature
 
         Flip();
 
-        if (OnStair)
-        {
-            if (Input.GetButton("Vertical"))
-            {
-                isClimb = true;
-            }
-        }
-
+        Climbing();
     }
 
     
@@ -132,7 +125,13 @@ public class Movement : Creature
     {
         Walking();
 
-        Climbing();
+        if (OnStair)
+        {
+            if (Input.GetButton("Vertical"))
+            {
+                isClimb = true;
+            }
+        }
     }
 
     // Учим микрочелика пользоваться лестницей

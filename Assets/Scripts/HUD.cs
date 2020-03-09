@@ -32,11 +32,13 @@ public class HUD : MonoBehaviour
 
     public void CloseWindow(GameObject window)
     {
+        GameController.Instance.State = GameState.Play;
         window.GetComponent<Animator>().SetBool("inv.Button", false);
     }
 
     public void ShowWindow(GameObject window)
     {
+        GameController.Instance.State = GameState.Pause;
         window.GetComponent<Animator>().SetBool("inv.Button", true);
     }
 }
